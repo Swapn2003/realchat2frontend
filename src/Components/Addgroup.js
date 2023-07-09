@@ -21,10 +21,10 @@ const Addgroup = (props) => {
           "Content-type":"application/json",
         }
       };
-      const {data} = await axios.put("http://localhost:5000/api/user/contacts/addContact",{"myId":props.myId,recipients:[groupId,props.myId],contactName:groupName,isGroupChat:false},config);
+      const {data} = await axios.put("https://realchat2backend.onrender.com/api/user/contacts/addContact",{"myId":props.myId,recipients:[groupId,props.myId],contactName:groupName,isGroupChat:false},config);
       // console.log(data);
 
-      const contacts =await axios.get(`http://localhost:5000/api/user/contacts/accessContacts?myId=${props.myId}`);
+      const contacts =await axios.get(`https://realchat2backend.onrender.com/api/user/contacts/accessContacts?myId=${props.myId}`);
       await User.updatemyContacts(contacts.data);
       console.log("addgroup::",contacts.data);
     }catch(error){
@@ -49,10 +49,10 @@ const Addgroup = (props) => {
           "Content-type":"application/json",
         }
       };
-      const {data} = await axios.put("http://localhost:5000/api/user/contacts/addContact",{"myId":props.myId,recipients:[groupId,props.myId],contactName:groupName,isGroupChat:true},config);
+      const {data} = await axios.put("https://realchat2backend.onrender.com/api/user/contacts/addContact",{"myId":props.myId,recipients:[groupId,props.myId],contactName:groupName,isGroupChat:true},config);
       // console.log(data);
 
-      const contacts =await axios.get(`http://localhost:5000/api/user/contacts/accessContacts?myId=${props.myId}`);
+      const contacts =await axios.get(`https://realchat2backend.onrender.com/api/user/contacts/accessContacts?myId=${props.myId}`);
       await User.updatemyContacts(contacts.data);
       console.log("addgroup::",contacts.data);
     }catch(error){

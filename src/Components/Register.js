@@ -28,7 +28,7 @@ const Register = () => {
         },
       };
       console.log("hello");
-      const {data} =await axios.post("http://localhost:5000/api/user/",{name, email,username, password},config);
+      const {data} =await axios.post("https://realchat2backend.onrender.com/api/user/",{name, email,username, password},config);
       try{localStorage.setItem("userInfo",JSON.stringify(data));}catch(error){
         console.log(error.message);
       }

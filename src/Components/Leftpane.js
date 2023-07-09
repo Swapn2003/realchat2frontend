@@ -10,7 +10,7 @@ const Leftpane = (props) => {
   useEffect(() => {
     const fetchContactList = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/user/contacts/accesscontacts?myId=${props.myId}`);
+        const response = await axios.get(`https://realchat2backend.onrender.com/api/user/contacts/accesscontacts?myId=${props.myId}`);
         const myContactList = response.data; // Assuming contact list is directly returned in response.data
         // console.log("hello");
         const mappedContacts = myContactList.map((contact) => {

@@ -64,7 +64,7 @@ const Chatbox = (props) => {
             };
             if(!isGroupChat){
               
-              var response =await axios.get(`http://localhost:5000/api/user/contacts/getName?myId=${props.myId}&senderId=${sender}`)
+              var response =await axios.get(`https://realchat2backend.onrender.com/api/user/contacts/getName?myId=${props.myId}&senderId=${sender}`)
             }
             
             // const formData = new FormData();
@@ -75,7 +75,7 @@ const Chatbox = (props) => {
             // formData.append('body',file);
             // await axios.put("http://localhost:5000/api/user/message/addFile",formData,config);
 
-            const pws=await axios.put("http://localhost:5000/api/user/message/addMessage",{myId:props.myId,contactName:`${isGroupChat?contactName:response.data}`,message:{"sender":sender,"content":text,"type":'file',locn:locn}},config).then(()=>{
+            const pws=await axios.put("https://realchat2backend.onrender.com/api/user/message/addMessage",{myId:props.myId,contactName:`${isGroupChat?contactName:response.data}`,message:{"sender":sender,"content":text,"type":'file',locn:locn}},config).then(()=>{
               setmessageTyped("");
               setFile();
     
@@ -101,12 +101,12 @@ const Chatbox = (props) => {
             
             if(!isGroupChat){
               
-              var response =await axios.get(`http://localhost:5000/api/user/contacts/getName?myId=${props.myId}&senderId=${sender}`)
+              var response =await axios.get(`https://realchat2backend.onrender.com/api/user/contacts/getName?myId=${props.myId}&senderId=${sender}`)
             }
             
             
             
-            const pws=await axios.put("http://localhost:5000/api/user/message/addMessage",{myId:props.myId,contactName:`${isGroupChat?contactName:response.data}`,message:{"sender":sender,"content":text,"type":type,locn:locn}},config).then(()=>{
+            const pws=await axios.put("https://realchat2backend.onrender.com/api/user/message/addMessage",{myId:props.myId,contactName:`${isGroupChat?contactName:response.data}`,message:{"sender":sender,"content":text,"type":type,locn:locn}},config).then(()=>{
               setmessageTyped("");
 
     
@@ -195,7 +195,7 @@ const Chatbox = (props) => {
         };
         // await socket.emit("send-message", { recipients, text: messageTyped,contactName:User.currentUser.contactName,isGroupChat:User.currentUser.isGroupChat,type:"text",body:""});
         // await User.addMessageToContact({text:messageTyped,id:recipients,'sender':props.myId});
-        await axios.put("http://localhost:5000/api/user/message/addMessage",{myId:props.myId,contactName:User.currentUser.contactName,message:{"sender":myId,"content":messageTyped,type:"file",locn:pic}},config).then(()=>{
+        await axios.put("https://realchat2backend.onrender.com/api/user/message/addMessage",{myId:props.myId,contactName:User.currentUser.contactName,message:{"sender":myId,"content":messageTyped,type:"file",locn:pic}},config).then(()=>{
           setmessageTyped("");
           setFile();
           setpic();
@@ -220,7 +220,7 @@ const Chatbox = (props) => {
         };
         await socket.emit("send-message", { recipients, text: messageTyped,contactName:User.currentUser.contactName,isGroupChat:User.currentUser.isGroupChat,type:"text",locn:pic});
         // await User.addMessageToContact({text:messageTyped,id:recipients,'sender':props.myId});
-        await axios.put("http://localhost:5000/api/user/message/addMessage",{myId:props.myId,contactName:User.currentUser.contactName,message:{"sender":myId,"content":messageTyped,type:"text",locn:pic}},config).then(()=>{
+        await axios.put("https://realchat2backend.onrender.com/api/user/message/addMessage",{myId:props.myId,contactName:User.currentUser.contactName,message:{"sender":myId,"content":messageTyped,type:"text",locn:pic}},config).then(()=>{
           setmessageTyped("");
 
         }).catch((err)=>{

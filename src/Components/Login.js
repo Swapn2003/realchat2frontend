@@ -23,7 +23,7 @@ const Login = (props) => {
           "Content-type":"application/json",
         }
       };
-      const {data} = await axios.post("http://localhost:5000/api/user/login",{username,password},config);
+      const {data} = await axios.post("https://realchat2backend.onrender.com/api/user/login",{username,password},config);
       console.log(data);
       props.setmyId(username);
     //   localStorage.setItem("userInfo",JSON.stringify(data));

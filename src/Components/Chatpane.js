@@ -44,7 +44,7 @@ const Chatpane = (props) => {
             "Content-type":"application/json",
           }
         };
-        axios.put(`http://localhost:5000/api/user/contacts/addMember`,{myId:props.myId,recipient:newMemberUsername,contactName:User.currentUser.contactName},config)
+        axios.put(`https://realchat2backend.onrender.com/api/user/contacts/addMember`,{myId:props.myId,recipient:newMemberUsername,contactName:User.currentUser.contactName},config)
       }catch(error){
         console.log(error.message);
       }
